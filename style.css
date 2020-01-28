@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
 
+:root {
+  --leading: 2em;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
@@ -115,8 +119,30 @@ input[type="button"]:hover {
 
 h2 {
   text-transform: uppercase;
+  position: relative;
+}
+
+h2::before {
+  content: " ";
+  position: absolute;
+  width: 8em;
+  background: #00bfff;
+  height: 0.4em;
+  bottom: 0;
+  z-index: -1;
+  margin-left: -0.3em;
 }
 
 img {
   width: 100%;
+}
+
+p {
+  line-height: var(--leading);
+}
+
+@media (min-width: 730px) {
+  section {
+    margin: 0 4em;
+  }
 }
